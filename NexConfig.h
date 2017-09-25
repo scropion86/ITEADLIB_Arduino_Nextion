@@ -15,6 +15,8 @@
 #ifndef __NEXCONFIG_H__
 #define __NEXCONFIG_H__
 
+// include SoftwareSerial for boards with only one serial port
+#include <SoftwareSerial.h>
 /**
  * @addtogroup Configuration 
  * @{ 
@@ -32,10 +34,16 @@
 #define dbSerial Serial
 
 /**
- * Define nexSerial for communicate with Nextion touch panel. 
+ * Define nexSerial for communicate with Nextion touch panel.
  */
-#define nexSerial Serial2
 
+/**
+The user need to add the below line in the sketch 
+SoftwareSerial HMISerial(GPIO_RX,GPIO_TX); // Master RX, TX, connect to Nextion TX, RX
+*/
+
+extern SoftwareSerial HMISerial;
+#define nexSerial HMISerial
 
 #ifdef DEBUG_SERIAL_ENABLE
 #define dbSerialPrint(a)    dbSerial.print(a)
