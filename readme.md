@@ -1,3 +1,11 @@
+
+
+# The Library is Modified to allow Softserial so it can be used with boards with only one serial while maintaning the serial debuging during development.
+# Tested and working on [esp8266/Arduino](https://github.com/esp8266/Arduino) stable release versions 2.3.0
+
+---
+
+
 @mainpage Home Page
 
 # Nextion
